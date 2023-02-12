@@ -26,8 +26,7 @@ $(function () {
                 class : "text-center",
                 orderable: false,
                 render: function (data, type, row){
-                    return '<a href="/producto/editar/'+ row.id +'/" class="btn btn-warning"><i class="fas fa-edit"></i></a>'+
-                    '<a href="#" rel="delete" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>';
+                    return '<a href="#" rel="delete" class="btn btn-danger"><i class="fas fa-trash-alt"></i></a>';
                 }
             },
             {

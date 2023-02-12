@@ -12,7 +12,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-drkor2n6l#*z775&7@#d3kz4z@4jv!7-y4)+mfsnag*f5_9t7j'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*','elvislml.pythonanywhere.com']
 

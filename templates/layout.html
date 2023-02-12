@@ -33,12 +33,12 @@
           <div class="section-header">
             <h1>{{ titulo }}</h1>
             {% block boton_agregar %}
-            
+
             {% endblock boton_agregar %}
           </div>
           <div id='contenido'></div>
             {% block contenido %}
-            
+
             {% endblock %}
         </section>
         {% block navStock %}
@@ -59,11 +59,12 @@
 
 
     <!-- Plugins -->
-    {% block plugins_js %}
-    {% endblock %}
 
     {% block scripts %}
-    
+
+    {% endblock %}
+
+    {% block plugins_js %}
     {% endblock %}
 
     <!-- Page Specific JS File -->
@@ -75,6 +76,7 @@
     {% block javascript %}
 
     {% endblock %}
+
 
     <!-- General JS Scripts -->
     <script>
@@ -90,8 +92,8 @@
               icon: 'success'
           });
       "{% endif %}"
-    </script>    
-    
+    </script>
+
     <script>
       "{% if form.errors %}"
         var errors = '';
@@ -107,6 +109,6 @@
         });
       "{% endif %}"
     </script>
-        
+
 </body>
 </html>
