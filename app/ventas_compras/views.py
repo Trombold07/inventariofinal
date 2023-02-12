@@ -129,7 +129,7 @@ class FacturaListarView(ValidatePermissionRequiredMixin, LoginRequiredMixin, Lis
             data['error'] = str(e)
         return JsonResponse(data, safe=False)
     
-    def get_context_data(request, **kwargs):
+    def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         context['titulo'] = "listado de Compras"
         return context

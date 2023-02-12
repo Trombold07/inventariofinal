@@ -36,5 +36,5 @@ class User(AbstractUser):
             if groups.exists():
                 if 'group' not in request.session:
                     request.session['group'] = groups[0]
-        except:
+        except Exception:
             pass

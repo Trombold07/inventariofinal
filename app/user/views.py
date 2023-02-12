@@ -134,6 +134,6 @@ class GroupView(LoginRequiredMixin, View):
     def get(self, request, *args, **kwargs):
         try:
             request.session['group'] = Group.objects.get(pk=self.kwargs['pk'])
-        except:
+        except Exception:
             pass
         return HttpResponseRedirect(reverse_lazy('index'))
