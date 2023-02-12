@@ -1,0 +1,85 @@
+
+{% if request.user.is_superuser == True or request.session.group.name == "Administrador"%}
+<div class="main-sidebar sidebar-style-2">
+  <aside id="sidebar-wrapper">
+    <div class="sidebar-brand">
+      <a href="{% url 'index' %}">Inventario</a>
+    </div>
+    <div class="sidebar-brand sidebar-brand-sm">
+      <a href="{% url 'index' %}">IVN</a>
+    </div>
+    <ul class="sidebar-menu">
+      <li class="menu-header">Ir a Inicio</li>
+      <li><a class="nav-link" href="{% url 'home' %}">
+        <i class="fas fa-fire"></i> <span>Inicio</span></a></li>
+      <li class="menu-header">Administración</li>
+      <li class="dropdown">
+        <a class="nav-link has-dropdown" href=""><i class="fas fa-clipboard-list"></i><span> Gestion Reportes</span></a>
+        <ul class="dropdown-menu">
+          <li><a class="nav-link" href="bootstrap-alert.html">Reportes de Ventas</a></li>
+          <li><a class="nav-link" href="bootstrap-badge.html">Report de Compras</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a class="nav-link has-dropdown" href=""><i class="fas fa-truck"></i><span>Proveedores</span></a>
+        <ul class="dropdown-menu">
+          <li><a class="nav-link" href="{% url 'listar_proveedor' %}">Ver todos</a></li>
+          <li><a class="nav-link" href="{% url 'registrar_proveedor' %}">Registrar Nuevo</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a class="nav-link has-dropdown" href=""><i class="fas fa-apple-alt"></i><span>Productos</span></a>
+        <ul class="dropdown-menu">
+          <li><a class="nav-link" href="{% url 'ver_categorias' %}">Ver Categorias</a></li>
+          <li><a class="nav-link" href="{% url 'listar_productos' %}">Ver todos</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a class="nav-link has-dropdown" href=""><i class="fas fa-cart-plus"></i> <span>Gestion de Compras</span></a>
+        <ul class="dropdown-menu">
+          <li><a class="nav-link" href="{% url 'factura_compra' %}">Factura de Compras</a></li>
+          <li><a class="nav-link" href="{% url 'listar_factura' %}">Lista de Compras</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a class="nav-link has-dropdown" href=""><i class="fas fa-cart-arrow-down"></i>  <span>Gestion de Ventas</span></a>
+        <ul class="dropdown-menu">
+          <li><a class="nav-link" href="{% url 'factura_venta' %}">Factura de Ventas</a></li>
+          <li><a class="nav-link" href="{% url 'listar_factura' %}">Lista de Ventas</a></li>
+        </ul>
+      </li>
+      <li class="dropdown">
+        <a class="nav-link has-dropdown" href=""><i class="fas fa-user"></i>  <span>Gestion de Usuarios</span></a>
+        <ul class="dropdown-menu">
+          <li><a class="nav-link" href="{% url 'crear_usuario' %}">Registrar Usuario</a></li>
+          <li><a class="nav-link" href="{% url 'listar_usuarios' %}">Listar Usuarios</a></li>
+        </ul>
+      </li>
+    </ul>
+  </aside>
+</div>
+{% endif %}
+{% if request.session.group.name == "Empleado"%}
+<div class="main-sidebar sidebar-style-2">
+  <aside id="sidebar-wrapper">
+    <div class="sidebar-brand">
+      <a href="{% url 'index' %}">Inventario</a>
+    </div>
+    <div class="sidebar-brand sidebar-brand-sm">
+      <a href="{% url 'index' %}">IVN</a>
+    </div>
+    <ul class="sidebar-menu">
+      <li class="menu-header">Dashboard</li>
+      <li><a class="nav-link" href="{% url 'index' %}"><i class="fas fa-fire"></i> <span>Dashboard</span></a></li>
+      <li class="menu-header">Administración</li>
+      <li><a class="nav-link" href="{% url 'listar_productos' %}"><i class="fas fa-apple-alt"></i>Ver Productos</a></li>
+      <li><a class="nav-link" href="{% url 'factura_compra' %}"><i class="fas fa-cart-plus"></iRealizar Compras</a></li>
+      <li><a class="nav-link" href="{% url 'factura_venta' %}"><i class="fas fa-cart-arrow-down"></i>Realizar Ventas</a></li>
+    </ul>
+  </aside>
+</div>
+{% endif %}
+
+<script>
+
+</script>

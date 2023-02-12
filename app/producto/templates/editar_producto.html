@@ -1,0 +1,19 @@
+{% extends 'acciones.html' %}
+{% load static %}
+
+
+{% block javascript %}
+    <script src="{% static 'select_producto.js' %}"></script>
+{% endblock %}
+
+{% block plugins_js %}
+<script>
+	$('form').on('submit', function (e) {
+		e.preventDefault();
+		var parameters = new FormData(this)
+		actions_switalert_ajax(window.location.pathname, 'Notificación', '{{ mensaje_informacion }}', parameters, function () {
+            location.href = '{{ success_url }}';
+        }); 
+	});
+</script>
+{% endblock %}

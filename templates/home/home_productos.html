@@ -1,0 +1,86 @@
+{% extends 'home/home_index.html' %}
+
+{% block content %}
+<section class="section">
+  <div class="section-header">
+    <h1>Nuestros Productos</h1>
+    <!-- Boton inicio -->
+    <div class="section-header-breadcrumb">
+      <div class="breadcrumb-item">
+        <a href="{% url 'home' %}" class="btn btn-info" title="Registrar nueva Especie">
+          <i class="fas fa-home"></i> Ir a inicio
+        </a>
+      </div>
+    </div>
+    <!-- Fin Boton inicio -->
+  </div>
+  <div class="section-body">
+    <div class="row">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-body">
+            <div class="row">
+              {% for producto in page_obj %}
+                {# Each "contact" is a Contact model object. #}
+                <div class="col-12 col-md-6 col-lg-3">
+                  <div class="card card-success">
+                    <div class="card-header">
+                      <h4>{{ producto.nombre}}</h4>
+                    </div>
+                    <div class="card-body">
+                      <div class="card-body">
+                        <div class="chocolat-parent">
+                          <a class="chocolat-image" title="Just an example">
+                            <div data-crop-image="285">
+                              <img alt="image" src="{{ producto.imagen.url }}" class="img-fluid">
+                            </div>
+                          </a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+          <nav aria-label="...">
+            <ul class="pagination">
+                {% if page_obj %}
+                    {% if page_obj.has_other_pages %}
+                        <div class="btn-group" role="group" aria-label="...">
+                            {% if page_obj.has_previous %}
+                                <a href="?page=1" class="page-link">&laquo; Inicio</a>
+                                <a href="?page={{ page_obj.previous_page_number }}" class="page-link">Atras</a>
+                                
+                            {% endif %}
+                    
+                            {% for page_number in page_obj.paginator.page_range %}
+                                {% if page_obj.number == page_number %}
+                                    <button class="btn btn-outline-primary active">
+                                        <span>{{ page_number }} <span class="sr-only">(current)</span></span>
+                                    </button>
+                                {% else %}
+                                    <a href="?page={{ page_number }}" class="btn btn-outline-primary">
+                                        {{ page_number }}
+                                    </a>
+                                {% endif %}
+                            {% endfor %}
+                    
+                            {% if page_obj.has_next %}
+                                <a href="?page={{ page_obj.next_page_number }}" class="page-link">Siguiente</a>
+                                <a href="?page={{ page_obj.paginator.num_pages }}" class="page-link">Final &raquo;</a>
+                                {% comment %} <a href="?page={{ page_obj.next_page_number }}" class="btn btn-outline-primary">&raquo;</a> {% endcomment %}
+                            {% endif %}
+                        </div>
+                    {% endif %}
+                {% else %}
+                    <p>No items found.</p>
+                {% endif %}
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock content %}

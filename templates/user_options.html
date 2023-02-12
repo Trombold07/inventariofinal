@@ -1,0 +1,25 @@
+<li class="dropdown">
+    <a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
+        <img alt="image" src="{{ request.user.get_img }}" class="rounded-circle mr-1">
+        <div class="d-sm-none d-lg-inline-block">{{ request.user.first_name }} {{ request.user.last_name }}</div>
+    </a>
+    <div class="dropdown-menu dropdown-menu-right">
+        <div class="dropdown-title">Logeado {{ request.user.last_login }}</div>
+        <a href="features-profile.html" class="dropdown-item has-icon">
+            <i class="far fa-user"></i> Perfil
+        </a>
+        <a href="features-activities.html" class="dropdown-item has-icon">
+            <i class="fas fa-bolt"></i> Actividades
+        </a>
+        <a href="features-settings.html" class="dropdown-item has-icon">
+            <i class="fas fa-cog"></i> Configuraciones
+        </a>
+        <a href="" class="dropdown-item has-icon">
+            <i class='fas fa-exchange-alt'></i> Cambiar contraseña
+        </a>
+        <div class="dropdown-divider"></div>
+        <a href="{% url 'logout' %}" class="dropdown-item has-icon text-danger">
+            <i class="fas fa-sign-out-alt"></i> Salir
+        </a>
+    </div>
+</li>

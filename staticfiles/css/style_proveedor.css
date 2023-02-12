@@ -1,0 +1,5 @@
+.button-small{
+    display: flex;
+    column-gap: 0.25rem;
+}
+

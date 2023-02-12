@@ -1,0 +1,32 @@
+{% extends 'list.html' %}
+{% load static %}
+
+{% block js %}
+<script src="{% static 'categoria/listar_categoria.js' %}"></script>
+{% endblock js %}
+
+{% block boton_agregar %}
+<div class="section-header-breadcrumb">
+  <div class="breadcrumb-item">
+    <a href="{% url 'crear_categoria' %}" class="btn btn-success" title="Registrar nueva Especie">
+      <i class="fas fa-plus"></i> Nueva Categoria
+    </a>
+    <a href="{% url 'index' %}" class="btn btn-info" title="Registrar nueva Especie">
+        <i class="fas fa-home"></i> Ir a inicio
+    </a>
+  </div>
+</div>
+{% endblock boton_agregar %}
+
+{% block thead %}
+<tr>
+  <th>Nombre</th>
+  <th>Descripcion</th>
+  <th>Imagen</th>
+  <th>Opcciones</th>
+</tr>
+{% endblock thead %}
+
+{% block tbody %}
+
+{% endblock tbody %}

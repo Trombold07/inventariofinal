@@ -1,0 +1,174 @@
+{% extends 'home/home.html' %}
+
+{% load static %}
+{% block content %}
+
+<!-- Foto inicio -->
+<section class="section">
+  <div class="section-body">
+    <div class="row">
+      <div class="col-12 mb-4">
+        <div class="hero text-white hero-bg-image hero-bg-parallax" data-background="{% static 'img/portada.jpg' %}">
+          <div class="hero-inner">
+            <h1>BIENVENIDOS</h1>
+            <p class="lead">Sistema de control de inventario</p>
+            <div class="mt-4">
+              <a href="{% url 'index' %}" class="btn btn-outline-white btn-lg btn-icon icon-left">
+                <i class="fas fa-sign-in-alt"></i>
+                Ir al Sistema
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Fin de inicio -->
+
+<!-- Nosotros -->
+<section class="section">
+  <div class="section-body">
+    <div class="card" id="nosotros">
+      <div class="card-header">
+        <h4>Sobre Nosotros</h4>
+      </div>
+      <div class="card-body">
+        <p>Somos una empresa dedicada a la comercialización de productos 
+          de consumo masivo, bazar, electrodomésticos, artículos para el 
+          hogar, juguetería, ferretería en general y maquinarias; al igual 
+          que la transformación, procesamiento de carnes blancas y rojas así 
+          como la elaboración de productos de panadería y repostería en general, 
+          creada desde 1995.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Fin Nosotros -->
+
+<!-- Mision y Vision -->
+<section class="section">
+  <div class="card" id="mision">
+    <div class="card-header">
+      <h4>Mision y Vision</h4>
+      <div class="card-header-action">
+        <a href="#" class="btn btn-success">
+          <i class="fas fa-arrow-up"></i>
+        </a>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="section-body">    
+        <div class="row">
+          <div class="col-12 col-md-6 col-lg-6">
+            <div class="card card-success">
+              <div class="card-header">
+                <h4>Mision</h4>
+              </div>
+              <div class="card-body">
+                <p>
+                  Ofrecer un amplio surtido de productos en diferentes líneas como: alimentación,
+                  panadería, repostería, bazar, electrodomésticos, artículos para el hogar, juguetería,
+                  ferretería y maquinarias con una atención de calidad a precios cómodos y
+                  asequibles ajustados siempre a los requerimientos de la sociedad Lojana y del país.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-6">
+            <div class="card card-warning">
+              <div class="card-header">
+                <h4>Vision</h4>
+              </div>
+              <div class="card-body">
+                <p>
+                  Consolidarnos como una comercializadora líder en la ciudad y el país, en donde
+                  nuestros clientes estén siempre bien atendidos, y puedan realizar sus compras de
+                  manera agradable y satisfactoria. Generando un cambio continúo mediante la
+                  apertura de sucursales y por ende la creación de fuentes de trabajo.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Fin de Mision-Vision -->
+
+<!-- Contactar -->
+<section class="section">
+  <div class="card" id="comentarios">
+    <div class="card-header">
+      <h4>Contactar</h4>
+      <div class="card-header-action">
+        <a href="#" class="btn btn-success">
+          <i class="fas fa-arrow-up"></i>
+        </a>
+      </div>
+    </div>
+    <div class="card-body">
+      <div class="section-body">    
+        <div class="row">
+          <div class="col-12 col-md-6 col-lg-6">
+            <div class="card card-success">
+              <div class="card-header text-center"><h4>Contact Us</h4></div>
+              <div class="card-body">
+                <form method="POST">
+                  <div class="form-group floating-addon">
+                    <label>Name</label>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">
+                          <i class="far fa-user"></i>
+                        </div>
+                      </div>
+                      <input id="name" type="text" class="form-control" name="name" autofocus placeholder="Name">
+                    </div>
+                  </div>
+
+                  <div class="form-group floating-addon">
+                    <label>Email</label>
+                    <div class="input-group">
+                      <div class="input-group-prepend">
+                        <div class="input-group-text">
+                          <i class="fas fa-envelope"></i>
+                        </div>
+                      </div>
+                      <input id="email" type="email" class="form-control" name="email" placeholder="Email">
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label>Message</label>
+                    <textarea class="form-control" placeholder="Type your message" data-height="150"></textarea>
+                  </div>
+
+                  <div class="form-group text-right">
+                    <button type="submit" class="btn btn-round btn-lg btn-primary">
+                      Enviar Comentario
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6 col-lg-6">
+            <div class="card card-primary">
+              <div class="card-body">
+                <div class="jumbotron text-center" data-background="{% static 'img/gracias.jpg' %}">
+                  <h2 style="color:white;">Gracias por su visita</h2>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Fin de Contactar -->
+
+{% endblock content %}
+
